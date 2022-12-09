@@ -35,26 +35,26 @@ class MainActivity : AppCompatActivity() {
                 lista[i].text = liczba.toString()
             }
             sortuj.setOnClickListener {
-                val lista2: MutableList<Int> = mutableListOf()
+                val listasort: MutableList<Int> = mutableListOf()
                 for (i in 0..8) {
                     if (lista[i].isChecked)
-                        lista2.add(lista[i].text.toString().toInt())
+                        listasort.add(lista[i].text.toString().toInt())
                 }
-                for (i in 0 until  lista2.size-1)
-                    for(j in 0 until  lista2.size-1)
-                        if(lista2[j] > lista2[j+1])
+                for (i in 0 until  listasort.size-1)
+                    for(j in 0 until  listasort.size-1)
+                        if(listasort[j] > listasort[j+1])
                         {
-                            val zamiana = lista2[j]
-                            lista2[j] = lista2[j+1]
-                            lista2[j+1] = zamiana
+                            val zamiana = listasort[j]
+                            listasort[j] = listasort[j+1]
+                            listasort[j+1] = zamiana
                         }
-                if (lista2.isEmpty())
+                if (listasort.isEmpty())
                 {
                     wynik.text = "Lista jest pusta"
                 }
                 else
                 {
-                    wynik.text = lista2.toString()
+                    wynik.text = listasort.toString()
                 }
             }
         }
